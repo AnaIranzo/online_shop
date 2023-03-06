@@ -4,10 +4,11 @@ const router = express.Router();
 const { copyFile } = require('fs');
 
 const Product = require('../models/Product');
+const Providers = require('../models/Providers');
 
 router.get('/', async (req, res) => {
     try {
-        const products = await Product.find({});
+        const products = await Product.find({}).populate({path: 'provider', Model: Providers });
         res.json(products);
     } catch (err) {
         console.error(err.message);

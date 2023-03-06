@@ -1,6 +1,6 @@
 import React from "react";
 import { useState, useEffect } from 'react';
-
+import List from './List/List'
 
 const AllProducts = () => {
   const [products, setProducts] = useState([]);
@@ -10,20 +10,13 @@ const AllProducts = () => {
     .then(res => res.json())
     .then(data => setProducts(data))
   }, [])
-/*   const getAllProducts = async () => {
 
-    try {
-      const res = await fetch('/products');
-      const data = await res.json();
-
-      setProducts(data)
-    } catch (error) {
-      
-    }
-  }
-  getAllProducts(); */
   console.log(products);
-  return <div>AllProducts</div>;
+  return <section>
+
+    <List data={products}/>
+
+  </section>;
 
 };
 
