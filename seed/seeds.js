@@ -5,8 +5,9 @@
 const mongoose = require('mongoose');
 // Schema must match the seed
 const Products = require('../models/Product');
+const Providers = require('../models/Providers');
 
-//**PROTECT CREDS WITH THIS .ENV INSTEAD OF BRADS' DEFAULTJSON
+
 require('dotenv').config();
 const db = process.env.MY_MONGO_URI;
 
@@ -17,6 +18,49 @@ mongoose
   .catch((error) => console.log(error));
 
 
+  const providers = [
+
+    {"company_name": "fakestore0",
+    "CIF": "B40236880",
+    "address": "Calle del sol",
+  },
+  {"company_name": "fakestore1",
+    "CIF": "B40236884",
+    "address": "Calle de Batman",
+  },
+  {"company_name": "fakestore2",
+    "CIF": "B40233883",
+    "address": "Calle del gatito",
+  },
+  {"company_name": "fakestore3",
+    "CIF": "B40236483",
+    "address": "Calle del front",
+  },
+  {"company_name": "fakestore4",
+    "CIF": "B40235883",
+    "address": "Calle del back",
+  },
+  {"company_name": "fakestore5",
+    "CIF": "B40236683",
+    "address": "Calle de js",
+  },
+  {"company_name": "fakestore6",
+    "CIF": "B40237883",
+    "address": "Calle de react",
+  },
+  {"company_name": "fakestore7",
+    "CIF": "B40136883",
+    "address": "Calle del developer",
+  },{"company_name": "fakestore8",
+  "CIF": "B40233883",
+  "address": "Calle del sol",
+  },
+  {"company_name": "fakestore9",
+    "CIF": "B40239883",
+    "address": "Calle de nodejs",
+  }
+  
+  ]
 
 const products = [
     {
@@ -261,15 +305,29 @@ const products = [
     }
     ]
 
+
+
 products.map(product => product.provider = 'fakestore' + Math.floor(Math.random() * (10 - 0) + 0))
 
 
 //   seeding function
 const seedDB = async () => {
   // deletes any existing collections before seeding
+  await Providers.deleteMany({});
+  await Providers.insertMany(providers);
+
+  const data = await Providers.find({});
+  let ids = []
+  data.map(provider => ids.push(provider._id))
+  console.log(ids);
+
+  products.map(product => product.provider = ids[Math.floor(Math.random() * (10 - 0) + 0)])
+  console.log(products);
+
   await Products.deleteMany({});
-  await Products.insertMany(products);
+  await Products.insertMany(products); 
   console.log('seedDB function ran');
+
 };
 //   call the function and it's promise to close this connection after seeding
 seedDB().then(() => {
