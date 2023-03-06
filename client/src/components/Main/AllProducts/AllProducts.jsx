@@ -1,24 +1,25 @@
 import React from "react";
-import { useState, useEffect } from 'react';
-import List from './List/List'
+import { useState, useEffect} from 'react';
+import List from './List/List';
 
 const AllProducts = () => {
-  const [products, setProducts] = useState([]);
+  
   const [ascendingTitle, setAscendingTitle] = useState(true);
   const [descendingTitle, setDescendingTitle] = useState(false);
   const [ascendingRating, setAscendingRating] = useState(false);
   const [descendingRating, setDescendingRating] = useState(false);
   const [ascendingPrice, setAscendingPrice] = useState(false);
   const [descendingPrice, setDescendingPrice] = useState(false);
-  
+  const [products, setProducts] = useState([]);
+
+
 
   useEffect(()=> {
     fetch('http://localhost:5000/products')
-    .then(res => res.json())
-    .then(data => setProducts(data))
-  }, [setProducts, ascendingTitle, descendingTitle,ascendingRating,descendingRating, ascendingPrice, descendingPrice])
+  .then(res => res.json())
+  .then(data => setProducts(data))
+  }, [ setProducts, ascendingTitle, descendingTitle,ascendingRating,descendingRating, ascendingPrice, descendingPrice])
 
-  console.log(products);
   
  
 
