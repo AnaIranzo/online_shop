@@ -1,5 +1,7 @@
 import React, {useState} from "react";
 import HomeCard from "./HomeCard/HomeCard";
+import { v4 as uuidv4 } from 'uuid';
+
 
 const Home = ({products}) => {
 
@@ -7,18 +9,23 @@ const Home = ({products}) => {
   
   const onChange = event => setQuery(event.target.value);
 
-  const filteredProducts = products.filter(product => {
+  let filteredProducts = []
 
-    return product.title.toLowerCase().includes(query.toLowerCase());
-  });
+  const filterProducts = () => {
+    filteredProducts = products.filter(product => {return product.title.toLowerCase().includes(query.toLowerCase()) || product.provider.company_name.toLowerCase().includes(query.toLowerCase()) });
 
+
+  }
+  
+
+  filterProducts();
 
 
   return <div>
 
 <input type="text" value={query} onChange={onChange}/>
       <div className="list">
-        {filteredProducts.map(product => <HomeCard data={product}/>)}
+        {filteredProducts.map(product => <HomeCard data={product}  key={uuidv4()}/>)}
       </div>
   </div>;
 };
