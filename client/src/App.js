@@ -4,7 +4,7 @@ import { BrowserRouter , Routes, Route } from 'react-router-dom';
 import Home from './components/Main/Home/Home';
 import Detail from './components/Main/Detail/Detail';
 import Nav from './components/Header/Nav/Nav';
-import AllProducts from './components/Main/AllProducts/AllProducts';
+import Main from './components/Main/Main';
 import Cart from './components/Main/Cart/Cart';
 import Footer from './components/Footer/Footer';
 
@@ -20,7 +20,7 @@ function App() {
         <Nav />
           <Routes>
             <Route path='/' element={<Home />} />
-            <Route path='/products' element={<AllProducts />} />
+            <Route path='/products' element={<Main />} />
             <Route path='/:id' element={<Detail />} />
             <Route path='/cart' element={<Cart />} />
           </Routes>

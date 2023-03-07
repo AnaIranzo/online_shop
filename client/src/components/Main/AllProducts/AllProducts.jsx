@@ -3,7 +3,7 @@ import { useState, useEffect} from 'react';
 import ReactPaginate from 'react-paginate';
 import List from './List/List';
 
-const AllProducts = () => {
+const AllProducts = (props) => {
   
   const [ascendingTitle, setAscendingTitle] = useState(true);
   const [descendingTitle, setDescendingTitle] = useState(false);
@@ -12,18 +12,8 @@ const AllProducts = () => {
   const [ascendingPrice, setAscendingPrice] = useState(false);
   const [descendingPrice, setDescendingPrice] = useState(false);
   const [currentPage, setCurrentPage] = useState(0);
-  const [products, setProducts] = useState([]);
-
-  useEffect(() => {
-    fetchData();
-  }, []);
 
 
-function fetchData() {
-  fetch('http://localhost:5000/products')
-  .then(res => res.json())
-  .then(data => setProducts(data))
-      }
   
 
   useEffect(()=> {
@@ -32,10 +22,10 @@ function fetchData() {
 
   const PER_PAGE = 10;
 const offset = currentPage * PER_PAGE;
-const currentPageData = products
+const currentPageData = props.products
     .slice(offset, offset + PER_PAGE)
     .map(( products ) => products);
-const pageCount = Math.ceil(products.length / PER_PAGE);
+const pageCount = Math.ceil(props.products.length / PER_PAGE);
 console.log(currentPageData);
 
 function handlePageClick({ selected: selectedPage }) {
@@ -102,7 +92,7 @@ function handlePageClick({ selected: selectedPage }) {
   };
 
 
-  filterOrders(setProducts)
+  filterOrders(props.setProducts)
 
 
   return <section>
