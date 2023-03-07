@@ -1,5 +1,6 @@
 import React from "react";
 import { useState, useEffect} from 'react';
+import ReactPaginate from 'react-paginate';
 import List from './List/List';
 
 const AllProducts = () => {
@@ -10,21 +11,39 @@ const AllProducts = () => {
   const [descendingRating, setDescendingRating] = useState(false);
   const [ascendingPrice, setAscendingPrice] = useState(false);
   const [descendingPrice, setDescendingPrice] = useState(false);
+  const [currentPage, setCurrentPage] = useState(0);
   const [products, setProducts] = useState([]);
 
+  useEffect(() => {
+    fetchData();
+  }, []);
 
 
-  useEffect(()=> {
-    fetch('http://localhost:5000/products')
+function fetchData() {
+  fetch('http://localhost:5000/products')
   .then(res => res.json())
   .then(data => setProducts(data))
-  }, [ setProducts, ascendingTitle, descendingTitle,ascendingRating,descendingRating, ascendingPrice, descendingPrice])
-
+      }
   
- 
+
+  useEffect(()=> {
+    
+  }, [ ascendingTitle, descendingTitle,ascendingRating,descendingRating, ascendingPrice, descendingPrice])
+
+  const PER_PAGE = 10;
+const offset = currentPage * PER_PAGE;
+const currentPageData = products
+    .slice(offset, offset + PER_PAGE)
+    .map(( products ) => products);
+const pageCount = Math.ceil(products.length / PER_PAGE);
+console.log(currentPageData);
+
+function handlePageClick({ selected: selectedPage }) {
+  setCurrentPage(selectedPage);
+}
 
   const filterOrders = () => {
-    const dataArr = products;
+    const dataArr = currentPageData;
 
     // ASCENDING TITLE
     if (ascendingTitle) {
@@ -79,7 +98,7 @@ const AllProducts = () => {
 
     // 
     
-    return products;
+    return currentPageData;
   };
 
 
@@ -126,7 +145,19 @@ const AllProducts = () => {
                 }}>
                 Price
               </button>
-    <List data={products}/>
+    <List data={currentPageData}/>
+      <ReactPaginate
+        previousLabel={"← Previous"}
+        nextLabel={"Next →"}
+        pageCount={pageCount}
+        onPageChange={handlePageClick}
+        containerClassName={"pagination"}
+        previousLinkClassName={"pagination__link"}
+        nextLinkClassName={"pagination__link"}
+        disabledClassName={"pagination__link--disabled"}
+        activeClassName={"pagination__link--active"}
+      />
+      
           
 
   </section>;
