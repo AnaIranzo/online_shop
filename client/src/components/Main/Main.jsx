@@ -1,21 +1,10 @@
-import React, {useEffect, useState} from "react";
+
 import AllProducts from './AllProducts/AllProducts';
 
 
 
-const Main = () => {
-  const [products, setProducts] = useState([]);
-
-  useEffect(() => {
-    fetchData();
-  }, []);
-  
-  
-  function fetchData() {
-  fetch('http://localhost:5000/products')
-  .then(res => res.json())
-  .then(data => setProducts(data))
-      }
+const Main = ({products, setProducts}) => {
+ 
 
 
   return <main>

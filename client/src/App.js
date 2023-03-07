@@ -1,5 +1,5 @@
 import './styles/styles.scss';
-import React from "react";
+import React, {useEffect, useState} from "react";
 import { BrowserRouter , Routes, Route } from 'react-router-dom';
 import Home from './components/Main/Home/Home';
 import Detail from './components/Main/Detail/Detail';
@@ -11,6 +11,19 @@ import Footer from './components/Footer/Footer';
 
 function App() {
 
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+  
+  
+  function fetchData() {
+  fetch('http://localhost:5000/products')
+  .then(res => res.json())
+  .then(data => setProducts(data))
+      }
+
 
 
   return (
@@ -19,8 +32,8 @@ function App() {
       <BrowserRouter>
         <Nav />
           <Routes>
-            <Route path='/' element={<Home />} />
-            <Route path='/products' element={<Main />} />
+            <Route path='/' element={<Home products={products}/>} />
+            <Route path='/products' element={<Main products={products} setProducts={setProducts}/>} />
             <Route path='/:id' element={<Detail />} />
             <Route path='/cart' element={<Cart />} />
           </Routes>
