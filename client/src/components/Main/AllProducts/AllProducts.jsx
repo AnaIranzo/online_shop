@@ -90,13 +90,17 @@ function handlePageClick({ selected: selectedPage }) {
     return currentPageData;
   };
 
+console.log(currentPageData);
+  filterOrders(props.setProducts);
 
-  filterOrders(props.setProducts)
+  const showDetails = (e) => {
+      console.log(e);
+  }
 
 
   return <section className="all-products">
-     <h2>Online Shop</h2>
-              <button
+      <h2>Online Shop</h2>
+              <button className="sort_btn"
                 onClick={(e) => { 
                   ascendingTitle ?  setAscendingTitle(false) : setAscendingTitle(true);
                   ascendingTitle ? setDescendingTitle(true) : setDescendingTitle(false);  
@@ -109,9 +113,9 @@ function handlePageClick({ selected: selectedPage }) {
                   // setIsCountryCode(false);
                 }}> Title              
                 </button>
-         
+
           
-              <button
+              <button className="sort_btn"
                 onClick={(e) => {
                   ascendingRating ?  setAscendingRating(false) : setAscendingRating(true);
                   ascendingRating ? setDescendingRating(true) : setDescendingRating(false);  
@@ -124,7 +128,7 @@ function handlePageClick({ selected: selectedPage }) {
                 Rating
               </button>
           
-              <button
+              <button className="sort_btn"
                 onClick={(e) => {
                   ascendingPrice ?  setAscendingPrice(false) : setAscendingPrice(true);
                   ascendingPrice ? setDescendingPrice(true) : setDescendingPrice(false); 
@@ -135,7 +139,7 @@ function handlePageClick({ selected: selectedPage }) {
                 }}>
                 Price
               </button>
-    <List data={currentPageData}/>
+    <List data={currentPageData} showDetails={showDetails}/>
       <ReactPaginate
         previousLabel={"← Previous"}
         nextLabel={"Next →"}

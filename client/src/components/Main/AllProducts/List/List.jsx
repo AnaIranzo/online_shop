@@ -5,7 +5,7 @@ import Card from './Card/Card';
 const List = (props) => {
   return <section className="all-products-list">
 
-{props.data.map(product => <Card data={product} key={uuidv4()}/>)}
+{props.data.map(product => <Card data={product} key={uuidv4()} showDetails={props.showDetails}/>)}
 
   </section>;
 };
