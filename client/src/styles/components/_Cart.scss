@@ -1,0 +1,33 @@
+@import '../utils/mixins.scss';
+
+.cart{
+    @include column-center;
+    gap: 10px;
+    margin: 30px;
+    margin-bottom: 70px;
+
+    & img{
+        width: 300px;
+    }
+    & article{
+        @include column-center;
+        gap: 20px;
+    }
+    & span{
+        @include row-center;
+    }
+}
+
+
+@media screen and (min-width: 768px){
+    .cart{
+        padding-bottom: 50px;
+        @include row-center;
+        flex-wrap: wrap;
+        gap: 70px;
+        & article{
+            max-width: 300px;
+        }
+       
+    }
+}

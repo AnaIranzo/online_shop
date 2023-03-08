@@ -1,9 +1,9 @@
 import { GET_ALL_PRODUCTS, ADD_CART, INCREASE_QUANTITY, DECREASE_QUANTITY, DELETE_CART } from './cartTypes'
-//detecta que se ha lanzado una accion, busca el case y lo ejecuta
-const INITIAL_STATE = {//estado objeto con tres claves 
-    numberItems: 0, //numero que se ve en el carrito
-    cartItems: [], //guarda los items(objeto) añadidos al carritos
-    _products: [] //array de productos iniciales (se hace solo un fetch)
+
+const INITIAL_STATE = {
+    numberItems: 0, 
+    cartItems: [], 
+    _products: [] 
 }
 
 function cartReducer(state = INITIAL_STATE, action) {

@@ -15,47 +15,45 @@ const Cart = () => {
     });
 
     return (
-        <table className="table">
-            <thead>
-                <tr>
-                    <th></th>
-                    <th>Name</th>
-                    <th>Image</th>
-                    <th>Price</th>
-                    <th>Quantity</th>
-                    <th>Total Price</th>
-                </tr>
-            </thead>
-            <tbody>
+        <section className="cart">
+            
+            <>
                 {items.map((item, i) => {
                     return (
-                        <tr key={i} i={i}>
-                            <td><button style={{ cursor: "pointer" }} onClick={() => {
-                                dispatch(deleteCart(i))
-                            }}>X</button></td>
-                            <td>{item.title}</td>
-                            <td><img src={item.image} alt={item.title} style={{ width: '100px', height: '80px' }} /></td>
-                            <td>{item.price} $</td>
-                            <td>
-                                <button style={{ margin: '2px', cursor: "pointer" }} onClick={() => {
-                                    dispatch(decreaseQuantity(i))
-                                }}>-</button>
-                                <span>{item.quantity}</span>
-                                <button style={{ margin: '2px', cursor: "pointer" }} onClick={() => {
-                                    dispatch(increaseQuantity(i))
-                                }}>+</button>
-                            </td>
-                            <td><b>{parseInt(item.price * item.quantity).toFixed(2)} $</b></td>
-                        </tr>
+                        <article key={i} i={i}>
+
+                            <span>
+                            <button  onClick={() => {
+                                dispatch(deleteCart(i))}}>X</button>
+                                {item.title}
+                            </span>
+
+                              
+                            
+                            <img src={item.image} alt={item.title}  />
+                            <p>Price: {item.price} €</p>
+                            
+                                <span>
+                                <button  onClick={() => {
+                                    dispatch(decreaseQuantity(i))}}>-</button>
+                                <p>Quantity: {item.quantity}</p>
+                                
+                                <button  onClick={() => {
+                                    dispatch(increaseQuantity(i))}}>+</button>
+                                </span>
+                          
+                            <p>Total Price: {parseInt(item.price * item.quantity).toFixed(2)} €</p>
+                          
+                        </article>
                     )
                 })}
-                <tr>
-                    <td colSpan="5">Total: </td>
-                    <td><b>{Number(TotalCart).toFixed(2)} $</b></td>
-                </tr>
-            </tbody>
+              
+                    <p>Total: {Number(TotalCart).toFixed(2)} €</p>
+                    
+               
+            </>
 
-        </table>
+        </section>
     )
 }
 
