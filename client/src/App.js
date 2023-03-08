@@ -10,6 +10,8 @@ import NotFound from './components/Main/NotFound/NotFound';
 import Footer from './components/Footer/Footer';
 
 
+
+
 function App() {
 
   const [products, setProducts] = useState([]);
