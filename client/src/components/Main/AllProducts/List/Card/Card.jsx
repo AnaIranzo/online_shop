@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useDispatch } from 'react-redux';
-
+import { addToCart } from "../../../../../redux/cart/cartActions";
 
 const Card = (props) => {
   const dispatch = useDispatch();
@@ -11,7 +11,9 @@ const Card = (props) => {
     <p>Price: {props.data.price}€</p>
     <p>Rating: {props.data.rating.rate}</p>
     <Link to={'/products/'+props.data.id}>Details</Link>
- 
+    <button onClick={()=>{
+          dispatch(addToCart(props.data))
+        }}>Add to cart</button>
 
 
   </article>;
