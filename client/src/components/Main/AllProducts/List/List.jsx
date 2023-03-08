@@ -3,7 +3,7 @@ import { v4 as uuidv4 } from 'uuid';
 import Card from './Card/Card';
 
 const List = (props) => {
-  return <section>
+  return <section className="all-products-list">
 
 {props.data.map(product => <Card data={product} key={uuidv4()}/>)}
 

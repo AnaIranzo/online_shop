@@ -1,0 +1,14 @@
+@import '../utils/variables.scss';
+
+nav{
+    background-color: $violet;
+    height: 50px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    & a{
+        color: $ligth;
+        text-decoration: none;
+    }
+}

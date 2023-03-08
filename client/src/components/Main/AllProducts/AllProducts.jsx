@@ -21,12 +21,11 @@ const AllProducts = (props) => {
   }, [ ascendingTitle, descendingTitle,ascendingRating,descendingRating, ascendingPrice, descendingPrice])
 
   const PER_PAGE = 10;
-const offset = currentPage * PER_PAGE;
-const currentPageData = props.products
-    .slice(offset, offset + PER_PAGE)
-    .map(( products ) => products);
-const pageCount = Math.ceil(props.products.length / PER_PAGE);
-console.log(currentPageData);
+  const offset = currentPage * PER_PAGE;
+  const currentPageData = props.products
+      .slice(offset, offset + PER_PAGE)
+      .map(( products ) => products);
+  const pageCount = Math.ceil(props.products.length / PER_PAGE);
 
 function handlePageClick({ selected: selectedPage }) {
   setCurrentPage(selectedPage);
@@ -95,7 +94,8 @@ function handlePageClick({ selected: selectedPage }) {
   filterOrders(props.setProducts)
 
 
-  return <section>
+  return <section className="all-products">
+     <h2>Online Shop</h2>
               <button
                 onClick={(e) => { 
                   ascendingTitle ?  setAscendingTitle(false) : setAscendingTitle(true);

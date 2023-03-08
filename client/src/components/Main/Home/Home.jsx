@@ -21,13 +21,13 @@ const Home = ({products}) => {
   filterProducts();
 
 
-  return <div>
-
-<input type="text" value={query} onChange={onChange}/>
-      <div className="list">
+  return <section className="all-products">
+    <h2>Online Shop</h2>
+      <input type="text" value={query} onChange={onChange} placeholder={'Search...'}/>
+      <div className="all-products-list">
         {filteredProducts.map(product => <HomeCard data={product}  key={uuidv4()}/>)}
       </div>
-  </div>;
+  </section>;
 };
 
 export default Home;

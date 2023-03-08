@@ -1,3 +1,13 @@
+@import '../utils/mixins.scss';
+@import '../utils/variables.scss';
+
+
+.all-products{
+  margin: 30px;
+  margin-bottom: 70px;
+}
+
+
 .pagination {
     display: flex;
     justify-content: space-between;
@@ -8,8 +18,8 @@
   .pagination a {
     padding: 10px;
     border-radius: 5px;
-    border: 1px solid #6c7ac9;
-    color: #6c7ac9;
+    border: 1px solid $violet;
+    color: $violet;
   }
   
   .pagination__link {
@@ -18,10 +28,11 @@
   
   .pagination__link--active a {
     color: #fff;
-    background: #6c7ac9;
+    background: $violet;
   }
   
   .pagination__link--disabled a {
     color: rgb(198, 197, 202);
     border: 1px solid rgb(198, 197, 202);
   }
+

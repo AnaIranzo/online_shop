@@ -1,0 +1,14 @@
+@import '../utils/mixins.scss';
+
+.all-products-list{
+    @include column-center;
+    margin: 20px;
+  }
+
+  @media screen and (min-width: 768px){
+    .all-products-list{
+        padding-bottom: 50px;
+        @include row-center;
+        flex-wrap: wrap;
+    }
+}

@@ -1,0 +1,19 @@
+@import '../utils/mixins.scss';
+
+.all-products-card{
+    @include column-center;
+    gap: 10px;
+
+    & img{
+        width: 300px;
+    }
+}
+
+@media screen and (min-width: 768px){
+    .all-products-card{
+        width: 400px;
+        & img {
+            max-height: 400px;
+        }
+    }
+}
