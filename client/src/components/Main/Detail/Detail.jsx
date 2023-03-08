@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from "react";
 import { useParams } from 'react-router-dom';
+import { v4 as uuidv4 } from 'uuid';
 import DetailCard from "./DetailCard/DetailCard";
 
 const Detail = () => {
@@ -20,8 +21,8 @@ const Detail = () => {
     
 
     console.log(product);
-  return <section>
-     {product.map(data => <DetailCard data={data}/>)}
+  return <section className="all-products-list">
+  {product.map(data => <DetailCard data={data} key={uuidv4()}/>)}
 
         
 
