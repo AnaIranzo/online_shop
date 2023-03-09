@@ -14,11 +14,12 @@ const AllProducts = (props) => {
   const [currentPage, setCurrentPage] = useState(0);
 
 
-  
 
   useEffect(()=> {
     
   }, [ ascendingTitle, descendingTitle,ascendingRating,descendingRating, ascendingPrice, descendingPrice])
+
+  /**Limit 10 products/page */
 
   const PER_PAGE = 10;
   const offset = currentPage * PER_PAGE;
@@ -31,6 +32,7 @@ function handlePageClick({ selected: selectedPage }) {
   setCurrentPage(selectedPage);
 }
 
+  /**Sort products by title, rating, price */
   const filterOrders = () => {
     const dataArr = currentPageData;
 
@@ -85,7 +87,7 @@ function handlePageClick({ selected: selectedPage }) {
       return searchDescArr;
     }
 
-    // 
+    
     
     return currentPageData;
   };

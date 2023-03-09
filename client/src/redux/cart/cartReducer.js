@@ -1,5 +1,7 @@
 import { GET_ALL_PRODUCTS, ADD_CART, INCREASE_QUANTITY, DECREASE_QUANTITY, DELETE_CART } from './cartTypes'
 
+/** Detect action, execute case */
+
 const INITIAL_STATE = {
     numberItems: 0, 
     cartItems: [], 

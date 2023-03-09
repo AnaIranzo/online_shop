@@ -1,3 +1,5 @@
+/**Define product schema */
+
 const mongoose = require('mongoose');
 
 const ProductSchema = mongoose.Schema({
@@ -39,4 +41,9 @@ const ProductSchema = mongoose.Schema({
     required: true
 }
 });
+
+
+/**Create model
+ * @exports {Product} model
+ */
 module.exports = mongoose.model('product', ProductSchema);

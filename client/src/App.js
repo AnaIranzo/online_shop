@@ -11,7 +11,7 @@ import NotFound from './components/Main/NotFound/NotFound';
 import Footer from './components/Footer/Footer';
 import { getAllProducts } from "./redux/cart/cartActions";
 
-
+/**Define routes, fetch allproducts data pass to redux actions */
 
 function App() {
   const dispatch = useDispatch();
@@ -21,6 +21,7 @@ function App() {
 
   useEffect(() => {
     fetchData();
+    // eslint-disable-next-line
   }, [dispatch]);
   
   

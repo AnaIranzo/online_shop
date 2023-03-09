@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import { useDispatch } from 'react-redux';
 import { addToCart } from "../../../../../redux/cart/cartActions";
 
+/**Print cards */
+
 const Card = (props) => {
   const dispatch = useDispatch();
   return <article className="all-products-card">
