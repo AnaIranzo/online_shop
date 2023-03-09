@@ -1,0 +1,11 @@
+@import '../utils/mixins.scss';
+
+.payment{
+    @include column-center;
+    margin: 40px;
+    & img{
+        width:300px;
+        height:300px;
+        border-radius:50px;
+    }
+}

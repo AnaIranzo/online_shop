@@ -6,7 +6,7 @@ const Nav = () => {
   return <nav >
   <Link to="/">Home</Link>
   <Link to="/products">Products</Link>
-  <Link to="/cart">Cart</Link> 
+  <Link className="gg-shopping-cart" to="/cart"></Link> 
   </nav>
 };
 

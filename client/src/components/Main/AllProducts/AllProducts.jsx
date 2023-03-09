@@ -101,8 +101,8 @@ console.log(currentPageData);
 
 
   return <section className="all-products">
-      <h2>Online Shop</h2>
-              <button className="sort_btn"
+            <section className="all-products-btns">
+              <button className="sort_btn css-button-sliding-to-bottom--green"
                 onClick={(e) => { 
                   ascendingTitle ?  setAscendingTitle(false) : setAscendingTitle(true);
                   ascendingTitle ? setDescendingTitle(true) : setDescendingTitle(false);  
@@ -117,7 +117,7 @@ console.log(currentPageData);
                 </button>
 
           
-              <button className="sort_btn"
+              <button className="sort_btn css-button-sliding-to-top--green"
                 onClick={(e) => {
                   ascendingRating ?  setAscendingRating(false) : setAscendingRating(true);
                   ascendingRating ? setDescendingRating(true) : setDescendingRating(false);  
@@ -130,7 +130,7 @@ console.log(currentPageData);
                 Rating
               </button>
           
-              <button className="sort_btn"
+              <button className="sort_btn css-button-sliding-to-bottom--green"
                 onClick={(e) => {
                   ascendingPrice ?  setAscendingPrice(false) : setAscendingPrice(true);
                   ascendingPrice ? setDescendingPrice(true) : setDescendingPrice(false); 
@@ -141,6 +141,7 @@ console.log(currentPageData);
                 }}>
                 Price
               </button>
+              </section>
     <List data={currentPageData} showDetails={showDetails}/>
       <ReactPaginate
         previousLabel={"← Previous"}

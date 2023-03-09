@@ -7,6 +7,10 @@
   margin-bottom: 70px;
 }
 
+.all-products-btns{
+  @include row-center
+}
+
 
 .pagination {
     display: flex;
@@ -36,3 +40,74 @@
     border: 1px solid rgb(198, 197, 202);
   }
 
+  .css-button-sliding-to-top--green {
+    width: 100px;
+    height: 40px;
+    color: #fff;
+    padding: 5px 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    outline: none;
+    border-radius: 5px;
+    z-index: 0;
+    background: #fff;
+    overflow: hidden;
+    border: 2px solid $tea_green;
+    color: $tea_green;
+  }
+  .css-button-sliding-to-top--green:hover {
+    color: #fff;
+  }
+  .css-button-sliding-to-top--green:hover:after {
+    height: 100%;
+  }
+  .css-button-sliding-to-top--green:after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    transition: all 0.3s ease;
+    left: 0;
+    bottom: 0;
+    height: 0;
+    width: 100%;
+    background: $tea_green;
+  }
+
+  .css-button-sliding-to-bottom--green {
+    width: 100px;
+    height: 40px;
+    color: #fff;
+    padding: 5px 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    outline: none;
+    border-radius: 5px;
+    z-index: 0;
+    background: #fff;
+    overflow: hidden;
+    border: 2px solid $tea_green;
+    color: $tea_green;
+  }
+  .css-button-sliding-to-bottom--green:hover {
+    color: #fff;
+  }
+  .css-button-sliding-to-bottom--green:hover:after {
+    height: 100%;
+  }
+  .css-button-sliding-to-bottom--green:after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    transition: all 0.3s ease;
+    left: 0;
+    top: 0;
+    height: 0;
+    width: 100%;
+    background: $tea_green;
+  }
