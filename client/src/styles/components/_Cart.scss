@@ -1,4 +1,5 @@
 @import '../utils/mixins.scss';
+@import '../utils/variables.scss';
 @import url('https://unpkg.com/css.gg@2.0.0/icons/css/add.css');
 @import url('https://unpkg.com/css.gg@2.0.0/icons/css/close-o.css');
 @import url('https://unpkg.com/css.gg@2.0.0/icons/css/remove.css');
@@ -18,6 +19,10 @@
     }
     & span{
         @include row-center;
+    }
+    & a{
+        text-decoration: none;
+        color: $violet;
     }
 }
 

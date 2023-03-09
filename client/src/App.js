@@ -10,13 +10,16 @@ import Cart from './components/Main/Cart/Cart';
 import NotFound from './components/Main/NotFound/NotFound';
 import Footer from './components/Footer/Footer';
 import { getAllProducts } from "./redux/cart/cartActions";
+import Payment from './components/Main/Payment/Payment';
 
 /**Define routes, fetch allproducts data pass to redux actions */
 
 function App() {
   const dispatch = useDispatch();
-  const _products = useSelector(state => state._products); //array de productos guardado en redux
+  const _products = useSelector(state => state._products); 
+   // eslint-disable-next-line 
   const numberItems = useSelector(state => state.numberItems);
+   // eslint-disable-next-line 
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
@@ -44,6 +47,7 @@ function App() {
             <Route path='/products' element={<Main products={_products} setProducts={setProducts}/>} />
             <Route path='/products/:id' element={<Detail />} />
             <Route path='/cart' element={<Cart />} />
+            <Route path='/payment' element={<Payment />} />
             <Route path='/*' element={<NotFound />} />
           </Routes>
           

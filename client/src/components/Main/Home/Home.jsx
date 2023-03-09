@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import HomeCard from "./HomeCard/HomeCard";
 import { v4 as uuidv4 } from 'uuid';
 
-import pic from'./assets/Screenshot from 2023-03-09 23-03-35.png';
+import pic from'./assets/Screenshotfrom2023-03-09 23-03-35.png';
 
 const Home = ({products}) => {
 

@@ -1,5 +1,6 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { deleteCart,decreaseQuantity, increaseQuantity} from "../../../redux/cart/cartActions";
 
 
@@ -48,7 +49,8 @@ const Cart = () => {
                     )
                 })}
               
-                    <p>Total: {Number(TotalCart).toFixed(2)} €</p>
+                    <h3>Total: {Number(TotalCart).toFixed(2)} €</h3>
+                    <Link to='/payment'>Check out</Link>
                     
                
             </>
