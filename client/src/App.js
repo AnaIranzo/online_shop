@@ -4,7 +4,7 @@ import { BrowserRouter , Routes, Route } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import Home from './components/Main/Home/Home';
 import Detail from './components/Main/Detail/Detail';
-import Nav from './components/Header/Nav/Nav';
+import Header from './components/Header/Header';
 import Main from './components/Main/Main';
 import Cart from './components/Main/Cart/Cart';
 import NotFound from './components/Main/NotFound/NotFound';
@@ -38,7 +38,7 @@ function App() {
     <>
 
       <BrowserRouter>
-        <Nav />
+        <Header />
           <Routes>
             <Route path='/' element={<Home products={_products}/>} />
             <Route path='/products' element={<Main products={_products} setProducts={setProducts}/>} />

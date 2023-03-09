@@ -23,8 +23,8 @@ const Cart = () => {
                         <article key={i} i={i}>
 
                             <span>
-                            <button  onClick={() => {
-                                dispatch(deleteCart(i))}}>X</button>
+                            <button className='gg-close-o ' onClick={() => {
+                                dispatch(deleteCart(i))}}></button>
                                 {item.title}
                             </span>
 
@@ -34,12 +34,12 @@ const Cart = () => {
                             <p>Price: {item.price} €</p>
                             
                                 <span>
-                                <button  onClick={() => {
-                                    dispatch(decreaseQuantity(i))}}>-</button>
+                                <button className='gg-remove' onClick={() => {
+                                    dispatch(decreaseQuantity(i))}}></button>
                                 <p>Quantity: {item.quantity}</p>
                                 
-                                <button  onClick={() => {
-                                    dispatch(increaseQuantity(i))}}>+</button>
+                                <button className='gg-add ' onClick={() => {
+                                    dispatch(increaseQuantity(i))}}></button>
                                 </span>
                           
                             <p>Total Price: {parseInt(item.price * item.quantity).toFixed(2)} €</p>

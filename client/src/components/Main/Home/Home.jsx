@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import HomeCard from "./HomeCard/HomeCard";
 import { v4 as uuidv4 } from 'uuid';
 
+import pic from'./assets/Screenshot from 2023-03-09 23-03-35.png';
 
 const Home = ({products}) => {
 
@@ -22,8 +23,11 @@ const Home = ({products}) => {
 
 
   return <section className="all-products">
-    <h2>Online Shop</h2>
-      <input type="text" value={query} onChange={onChange} placeholder={'Search...'}/>
+     <section className='banner'>
+    <img src={pic} alt="" />
+
+    </section>
+      <input type="text" className="search" value={query} onChange={onChange} placeholder={'Search...'}/>
       <div className="all-products-list">
         {filteredProducts.map(product => <HomeCard data={product}  key={uuidv4()}/>)}
       </div>
