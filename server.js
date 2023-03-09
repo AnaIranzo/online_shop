@@ -1,11 +1,9 @@
-// *SERVER
+/**Server */
 const express = require('express');
 var cors = require('cors')
-
-
 require('dotenv').config();
 
-// Connect MongoDB
+/**Connect to Mongodb */
 const connectDB = require('./config/db');
 connectDB();
 
@@ -18,7 +16,7 @@ app.use(express.json({ extended: false }));
 
 app.use('/products', require('./routes/productsRoutes'));
 
-
+/**Connect with client */
 if (process.env.NODE_ENV === 'production') {
     //*Set static folder
     app.use(express.static('client/build'));

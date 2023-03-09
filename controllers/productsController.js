@@ -1,13 +1,13 @@
 
 const express = require('express');
 const router = express.Router();
-// const { check, validationResults } = require('express-validator');
 const { copyFile } = require('fs');
-
 const Product = require('../models/Product');
 const Providers = require('../models/Providers');
 
-
+/** Find all products in mongodb collection
+ * @returns {products} json
+ */
 const getAllProducts = async (req, res) => {
 
     try {
@@ -18,11 +18,13 @@ const getAllProducts = async (req, res) => {
     }
 }
 
+/** Find one products that matches id in mongodb collection
+ * @returns {product} json
+ */
 const getProduct = async (req, res) => {
     try {
         const product = await Product.find({id: req.params.id}).populate({path: 'provider', Model: Providers });
         res.json(product);
-        console.log(product);
 
     } catch (err) {
         req.statusCode(500).send('Server Error, GET Method');

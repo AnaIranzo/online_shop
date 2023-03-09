@@ -4,7 +4,7 @@ const router = express.Router();
 const { copyFile } = require('fs');
 const productsController = require('../controllers/productsController')
 
-
+/**Products routes */
 
 router.get('/', productsController.getAllProducts)
 

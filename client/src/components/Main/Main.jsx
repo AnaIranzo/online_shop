@@ -8,7 +8,7 @@ const Main = ({products, setProducts}) => {
 
 
   return <main>
-
+   
 
     <AllProducts products={products} setProducts={setProducts}/>
 

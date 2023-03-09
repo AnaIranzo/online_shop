@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import { useDispatch } from 'react-redux';
 import { addToCart } from "../../../../../redux/cart/cartActions";
 
+/**Print cards */
+
 const Card = (props) => {
   const dispatch = useDispatch();
   return <article className="all-products-card">
@@ -11,7 +13,7 @@ const Card = (props) => {
     <p>Price: {props.data.price}€</p>
     <p>Rating: {props.data.rating.rate}</p>
     <Link to={'/products/'+props.data.id}>Details</Link>
-    <button onClick={()=>{
+    <button className="css-button-retro--blue " onClick={()=>{
           dispatch(addToCart(props.data))
         }}>Add to cart</button>
 

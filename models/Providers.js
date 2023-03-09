@@ -1,3 +1,5 @@
+/**Define provider schema */
+
 const mongoose = require('mongoose');
 
 
@@ -17,9 +19,12 @@ const objectSchema = {
         required: true 
     }
 };
-// Crear el esquema
+/**Create schema */
 const providersSchema = mongoose.Schema(objectSchema);
-// Crear el modelo --> Colección
+/**Create model
+ * @exports {Provider} model
+ */
+
 const Provider = mongoose.model('Providers', providersSchema);//creo una coleccion nueva en mongo que se llama Providers importante mayuscula
 
 module.exports = Provider;

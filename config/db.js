@@ -1,8 +1,7 @@
 const mongoose=require('mongoose');
 
-
-//**PROTECT CREDS WITH THIS .ENV INSTEAD OF BRADS' DEFAULTJSON
- const db = process.env.MY_MONGO_URI;
+/**Connect to MongoDB */
+const db = process.env.MY_MONGO_URI;
 
 const connectDB =async()=>{
     try {

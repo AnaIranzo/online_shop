@@ -1,6 +1,6 @@
 import { GET_ALL_PRODUCTS, ADD_CART, INCREASE_QUANTITY, DECREASE_QUANTITY, DELETE_CART } from './cartTypes'
 
-
+/**Call actions */
 export const getAllProducts = (products) => {
     return {
         type: GET_ALL_PRODUCTS,

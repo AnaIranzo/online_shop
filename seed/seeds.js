@@ -1,7 +1,7 @@
 
-// SEED FILE CONNECT TO MONGODB ON ITS OWN
-// *RUN  node seed/seeds.js from the same level as the server or .env variables ===undefined
-
+/** SEED FILE CONNECT TO MONGODB ON ITS OWN
+*RUN  node seed/seeds.js from the same level as the server
+*/
 const mongoose = require('mongoose');
 // Schema must match the seed
 const Products = require('../models/Product');
@@ -11,14 +11,17 @@ const Providers = require('../models/Providers');
 require('dotenv').config();
 const db = process.env.MY_MONGO_URI;
 
-// STAND ALONE CONNECTION TO DB;
+/** CONNECTION TO DB;*/ 
 mongoose
   .connect(db)
   .then(() => console.log('mongodb SEED connection success'))
   .catch((error) => console.log(error));
 
 
-  const providers = [
+/**array with products/providers 
+ *   @type {Array<object>}
+*/
+const providers = [
 
     {"company_name": "fakestore0",
     "CIF": "B40236880",
@@ -303,16 +306,16 @@ const products = [
     "count": 145
     }
     }
-    ]
+  ]
 
 
 
 products.map(product => product.provider = 'fakestore' + Math.floor(Math.random() * (10 - 0) + 0))
 
 
-//   seeding function
+/** seeding function */  
 const seedDB = async () => {
-  // deletes any existing collections before seeding
+/**deletes any existing collections before seeding*/
   await Providers.deleteMany({});
   await Providers.insertMany(providers);
 
@@ -329,7 +332,7 @@ const seedDB = async () => {
   console.log('seedDB function ran');
 
 };
-//   call the function and it's promise to close this connection after seeding
+/**close this connection after seeding*/
 seedDB().then(() => {
   console.log('seeds closed connection');
   mongoose.connection.close();
