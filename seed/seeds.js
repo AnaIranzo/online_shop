@@ -18,7 +18,9 @@ mongoose
   .catch((error) => console.log(error));
 
 
-/**array with products/providers */
+/**array with products/providers 
+ *   @type {Array<object>}
+*/
 const providers = [
 
     {"company_name": "fakestore0",
