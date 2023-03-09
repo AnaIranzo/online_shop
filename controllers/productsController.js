@@ -25,7 +25,6 @@ const getProduct = async (req, res) => {
     try {
         const product = await Product.find({id: req.params.id}).populate({path: 'provider', Model: Providers });
         res.json(product);
-        console.log(product);
 
     } catch (err) {
         req.statusCode(500).send('Server Error, GET Method');
