@@ -35,7 +35,7 @@
   
   7. enjoy
   
-  <img src='./public/assets/Screenshot from 2023-03-10 00-51-16.png' alt="Home" />
+  <img src='./client/public/assets/Screenshot from 2023-03-10 00-51-16.png' alt="Home" />
   
 
 
