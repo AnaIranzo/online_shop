@@ -1,4 +1,4 @@
-### In your project
+### Online Shop
  1. Folder structure
 
  Store your react app in a folder named client in the root of your project
@@ -37,7 +37,7 @@
   
   <img src='./client/public/assets/Screenshot from 2023-03-10 00-51-16.png' alt="Home" />
   
-
+# Try it at https://online-shop-upri.onrender.com/
 
 # Getting Started with Create React App
 
