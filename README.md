@@ -18,7 +18,8 @@
     "deploy": "concurrently \"npm run server\" \"npm run client\"",
     "render-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
  
-  },
+  }
+   ```
   
   4. add mongoDb uri to .env file
   
@@ -34,7 +35,7 @@
   
   7. enjoy
   
-  
+  <img src='./public/assets/Screenshot from 2023-03-10 00-51-16.png' alt="Home" />
   
 
 
