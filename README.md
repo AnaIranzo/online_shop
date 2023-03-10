@@ -36,14 +36,14 @@
   7. enjoy
   
   <img src='./client/public/assets/Screenshot from 2023-03-10 00-51-16.png' alt="Home" />
-  
-# Try it at https://online-shop-upri.onrender.com/
 
-# Getting Started with Create React App
+[Take a look]( https://online-shop-upri.onrender.com/)
+
+### Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+### Available Scripts
 
 In the project directory, you can run:
 
