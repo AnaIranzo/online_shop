@@ -18,42 +18,42 @@ const Cart = () => {
     return (
         <section className="cart">
             
-            <>
-                {items.map((item, i) => {
-                    return (
-                        <article key={i} i={i}>
+        <>
+            {items.map((item, i) => {
+                return (
+                    <article key={i} i={i}>
 
+                        <span>
+                        <button className='gg-close-o ' onClick={() => {
+                            dispatch(deleteCart(i))}}></button>
+                            {item.title}
+                        </span>
+
+                        
+                        
+                        <img src={item.image} alt={item.title}  />
+                        <p>Price: {item.price} €</p>
+                        
                             <span>
-                            <button className='gg-close-o ' onClick={() => {
-                                dispatch(deleteCart(i))}}></button>
-                                {item.title}
+                            <button className='gg-remove' onClick={() => {
+                                dispatch(decreaseQuantity(i))}}></button>
+                            <p>Quantity: {item.quantity}</p>
+                            
+                            <button className='gg-add ' onClick={() => {
+                                dispatch(increaseQuantity(i))}}></button>
                             </span>
-
-                              
-                            
-                            <img src={item.image} alt={item.title}  />
-                            <p>Price: {item.price} €</p>
-                            
-                                <span>
-                                <button className='gg-remove' onClick={() => {
-                                    dispatch(decreaseQuantity(i))}}></button>
-                                <p>Quantity: {item.quantity}</p>
-                                
-                                <button className='gg-add ' onClick={() => {
-                                    dispatch(increaseQuantity(i))}}></button>
-                                </span>
-                          
-                            <p>Total Price: {parseInt(item.price * item.quantity).toFixed(2)} €</p>
-                          
-                        </article>
-                    )
-                })}
-              
-                    <h3>Total: {Number(TotalCart).toFixed(2)} €</h3>
-                    <Link to='/payment'>Check out</Link>
                     
-               
-            </>
+                        <p>Total Price: {parseInt(item.price * item.quantity).toFixed(2)} €</p>
+                    
+                    </article>
+                )
+            })}
+        
+                <h3>Total: {Number(TotalCart).toFixed(2)} €</h3>
+                <Link to='/payment'>Check out</Link>
+                    
+            
+        </>
 
         </section>
     )
