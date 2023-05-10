@@ -29,7 +29,7 @@ function App() {
   
   
   async function fetchData() {
-    const res = await fetch('https://online-shop-upri.onrender.com')
+    const res = await fetch('https://online-shop-upri.onrender.com/products')//local ->'http://localhost:5000/products'
     const data = await res.json();
     console.log(data);
     dispatch(getAllProducts(data));
