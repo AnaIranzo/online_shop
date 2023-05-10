@@ -14,7 +14,7 @@ const Detail = () => {
   }, []);
 
   function fetchData() {
-    fetch(`http://localhost:5000/products/${id}`)
+    fetch(`https://online-shop-upri.onrender.com/products/${id}`)// local -> `http://localhost:5000/products/${id}`
     .then(res => res.json())
     .then(data => setProduct(data))
         }
