@@ -27,11 +27,11 @@
   
   5. run seed 
   
-  ### npm run seed
+  - `npm run seed`
   
   6. run server and client with concurrently
   
-  ### npm run deploy
+  - `npm run deploy`
   
   7. enjoy
   
