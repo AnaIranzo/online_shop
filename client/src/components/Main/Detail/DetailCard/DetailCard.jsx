@@ -4,11 +4,12 @@ import { addToCart } from "../../../../redux/cart/cartActions";
 
 const DetailCard = (props) => {
   const dispatch = useDispatch();
-  return <article className="all-products-card">
-      
-      <img src={props.data.image} alt="" />
-      <h1>{props.data.title}</h1>
-      <p>Description: {props.data.description}</p>
+  return <article className="product-card-details">
+      <img className="product-card__image" src={props.data.image} alt="" />
+
+      <span >
+      <h1 className="product-card__brand">{props.data.title}</h1>
+      <p className="product-card__description">Description: {props.data.description}</p>
       <p>Price: {props.data.price}€</p>
       <p>Rating: {props.data.rating.rate}</p>
       <p>Provider: {props.data.provider.company_name}</p>
@@ -18,6 +19,7 @@ const DetailCard = (props) => {
       <button className="css-button-retro--blue " onClick={()=>{
           dispatch(addToCart(props.data))
         }}>Add to cart</button>
+        </span>
       
 
 

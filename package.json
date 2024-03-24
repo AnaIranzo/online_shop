@@ -12,7 +12,6 @@
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "deploy": "concurrently \"npm run server\" \"npm run client\"",
     "render-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
- 
   },
   "repository": {
     "type": "git",
@@ -35,10 +34,13 @@
     "node-fetch": "^2.6.9",
     "react-paginate": "^8.1.4",
     "react-redux": "^8.0.5",
+    "react-slick": "^0.30.2",
     "redux": "^4.2.1",
     "redux-devtools-extension": "^2.13.9",
     "redux-logger": "^3.0.6",
     "sass": "^1.58.3",
+    "slick-carousel": "^1.8.1",
+    "styled-components": "^6.1.8",
     "uuid": "^9.0.0"
   },
   "devDependencies": {

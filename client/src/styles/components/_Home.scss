@@ -16,6 +16,11 @@
     }
 }
 
+.home_body{
+    margin: 2rem 1rem;
+
+}
+
 .search{
 
     color: rgba(0,0,0,.87);
@@ -35,7 +40,7 @@
     border-radius: 4px 4px 0 0;
     background: rgb(245, 245, 245);
     height: 56px;
-    margin: 20px;
+    margin: 40px 20px;
     :hover{
         border-bottom-color: rgba(0,0,0,.87);
         background: #ececec;

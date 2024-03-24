@@ -30,11 +30,11 @@
 @media screen and (min-width: 768px){
     .cart{
         padding-bottom: 50px;
-        @include row-center;
+        @include column-center;
         flex-wrap: wrap;
         gap: 70px;
         & article{
-            max-width: 300px;
+            max-width: 310px;
         }
        
     }

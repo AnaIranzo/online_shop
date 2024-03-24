@@ -27,13 +27,11 @@ const Cart = () => {
                         <button className='gg-close-o ' onClick={() => {
                             dispatch(deleteCart(i))}}></button>
                             {item.title}
+
+                            {/* <img src={item.image} alt={item.title}  /> */}
+                            <p>Price: {item.price} €</p>
                         </span>
 
-                        
-                        
-                        <img src={item.image} alt={item.title}  />
-                        <p>Price: {item.price} €</p>
-                        
                             <span>
                             <button className='gg-remove' onClick={() => {
                                 dispatch(decreaseQuantity(i))}}></button>
