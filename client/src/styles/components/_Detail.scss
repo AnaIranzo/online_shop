@@ -1,10 +1,10 @@
 .product-card-details {
     position: relative;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     text-align: center;
-    width: 50rem;
+    width: 22rem;
     background-color: white;
     border-radius: 10px;
     overflow: hidden;
@@ -13,4 +13,24 @@
     padding: 20px;
     justify-content: center;
     gap: 20px;
+  }
+
+  @media screen and (min-width: 768px){
+    .product-card-details {
+      position: relative;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      text-align: center;
+      width: 50rem;
+      background-color: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 2px 2px 5px 0px rgba(0, 64, 128, 0.1);
+      height: 50rem;
+      padding: 20px;
+      justify-content: center;
+      gap: 20px;
+    }
+    
   }
