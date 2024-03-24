@@ -15,7 +15,7 @@ var settings = {
   speed: 500,
   slidesToShow: 4,
   slidesToScroll: 4,
-  initialSlide: 1,
+  initialSlide: 0,
   responsive: [
     {
       breakpoint: 1024,
@@ -38,6 +38,7 @@ var settings = {
       breakpoint: 480,
       settings: {
         slidesToShow: 1,
+        initialSlide: 1,
         slidesToScroll: 1
       }
     }

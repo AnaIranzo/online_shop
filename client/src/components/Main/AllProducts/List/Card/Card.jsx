@@ -7,7 +7,7 @@ import { addToCart } from "../../../../../redux/cart/cartActions";
 
 const Card = (props) => {
   const dispatch = useDispatch();
-  return <article className="product-card ">
+  return <article className="product-card-products ">
     <img className="product-card__image"  src={props.data.image} alt="" />
     <h1 className="product-card__brand" >{props.data.title}</h1>
     <p className="product-card__description" >Price: {props.data.price}€</p>
