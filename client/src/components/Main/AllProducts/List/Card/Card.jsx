@@ -13,7 +13,7 @@ const Card = (props) => {
     <p className="product-card__description" >Price: {props.data.price}€</p>
     <p className="product-card__description">Rating: {props.data.rating.rate}</p>
     <Link to={'/products/'+props.data.id}>Details</Link>
-    <button className="css-button-retro--blue " onClick={()=>{
+    <button className="css-button-3d--green " onClick={()=>{
           dispatch(addToCart(props.data))
         }}>Add to cart</button>
 

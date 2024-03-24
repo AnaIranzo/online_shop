@@ -16,7 +16,7 @@ const DetailCard = (props) => {
       <p>CIF: {props.data.provider.CIF}</p>
       <p>Adress: {props.data.provider.address}</p>
 
-      <button className="css-button-retro--blue " onClick={()=>{
+      <button className="css-button-3d--green" onClick={()=>{
           dispatch(addToCart(props.data))
         }}>Add to cart</button>
         </span>

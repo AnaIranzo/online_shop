@@ -16,6 +16,9 @@
     & article{
         @include column-center;
         gap: 20px;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        padding: 20px;
+        border-radius: 5%;
     }
     & span{
         @include row-center;
@@ -29,12 +32,12 @@
 
 @media screen and (min-width: 768px){
     .cart{
-        padding-bottom: 50px;
+        padding: 50px;
         @include column-center;
         flex-wrap: wrap;
         gap: 70px;
         & article{
-            max-width: 310px;
+            width: 355px;
         }
        
     }
