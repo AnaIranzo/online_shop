@@ -39,6 +39,13 @@
 
 [Take a look]( https://online-shop-upri.onrender.com/)
 
+
+Version 1.0.1
+
+- Add React Slick Carousel 
+- Fix Cards styles
+- Improve Cart display
+
 ### Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
